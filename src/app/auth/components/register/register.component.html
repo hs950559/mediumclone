@@ -1,0 +1,49 @@
+<div class="auth-page">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-xs-12">
+        <h1 class="text-xs-center">Sign up</h1>
+        <p class="text-xs-center">
+          <a href="/login">Have an account?</a>
+        </p>
+        {{ form.value | json }}
+        <!-- <app-list-errors> <ul class="error-messages"></ul></app-list-errors> -->
+        <form [formGroup]="form" (ngSubmit)="register()">
+          <fieldset>
+            <fieldset class="form-group">
+              <input
+                class="form-control form-control-lg ng-pristine ng-valid"
+                placeholder="Username"
+                type="text"
+                formControlName="username"
+              />
+            </fieldset>
+            <fieldset class="form-group">
+              <input
+                class="form-control form-control-lg"
+                placeholder="Email"
+                type="text"
+                formControlName="email"
+              />
+            </fieldset>
+            <fieldset class="form-group">
+              <input
+                class="form-control form-control-lg"
+                placeholder="Password"
+                type="password"
+                formControlName="password"
+              />
+            </fieldset>
+            <button
+              class="btn btn-lg btn-primary pull-xs-right"
+              type="submit"
+              [disabled]="form.invalid"
+            >
+              Sign up
+            </button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
